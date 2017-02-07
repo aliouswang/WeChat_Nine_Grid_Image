@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     tools:context="com.aliouswang.wechat.ninegridimage.MainActivity">
 
-    <com.aliouswang.wechat.library.NormalGridImageViewGroup
-        android:id="@+id/gird_image"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 </RelativeLayout>

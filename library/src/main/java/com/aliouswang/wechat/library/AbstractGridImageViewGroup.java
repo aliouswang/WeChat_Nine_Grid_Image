@@ -18,7 +18,7 @@ public abstract class AbstractGridImageViewGroup<T extends View> extends ViewGro
     private static final int DEFAULT_VERTICAL_GAP = 15;
     private static final int DEFAULT_COLUMN_COUNT = 3;
     private static final float DEFAULT_RATIO = 1.0f;
-    private static final float DEFAULT_SINGLE_IMAGE_RATIO = 0.5f;
+    private static final float DEFAULT_SINGLE_IMAGE_RATIO = 2.0f;
     private static final int DEFAULT_MAX_IMAGE_COUNT = 9;
 
     private int mHorizontalGap;
@@ -131,16 +131,19 @@ public abstract class AbstractGridImageViewGroup<T extends View> extends ViewGro
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         int cellCount = getImageCount();
-        Logger.e("cellWidth:" + mCellWidth + ";cellHeight:" + mCellHeight);
+        Logger.e("cellWidth:" + mCellWidth + ";cellHeight:" + mCellHeight
+                + ";width:" + getMeasuredWidth() + ";height:" + getMeasuredHeight()
+        );
         for (int i = 0; i < cellCount; i++) {
             int row = i / mColumnCount;
             int column = i % mColumnCount;
             View childView = getChildAt(i);
             int l = (int) (left + getPaddingLeft() + (column * (mCellWidth + mHorizontalGap)));
             int r = (int) (l + mCellWidth);
-            int t = (int) (top + getPaddingTop() + (row * (mCellHeight + mVerticalGap)));
+            int t = (int) ( getPaddingTop() + (row * (mCellHeight + mVerticalGap)));
             int b = (int) (t + mCellHeight);
             childView.layout(l, t, r, b);
+
         }
     }
 

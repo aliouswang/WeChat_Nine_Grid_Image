@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <declare-styleable name="AbstractGridImageViewGroup">
+
+        <attr name="horizontal_gap" format="dimension"/>
+        <attr name="vertical_gap" format="dimension"/>
+        <attr name="column_count" format="integer"/>
+        <attr name="radio" format="float"/>
+        <attr name="single_image_ratio" format="float"/>
+        <attr name="max_image_count" format="integer"/>
+
+    </declare-styleable>
+
 </resources>

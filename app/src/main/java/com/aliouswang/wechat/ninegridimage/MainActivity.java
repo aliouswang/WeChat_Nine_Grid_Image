@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.aliouswang.wechat.ninegridimage.strategy.GlideImageLoadStrategy;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         FeedAdapter feedAdapter = new FeedAdapter();
         feedAdapter.setFeeds(ImageFactory.mockFeeds(20));
+        feedAdapter.setImageLoadStrategy(new GlideImageLoadStrategy());
         mRecyclerView.setAdapter(feedAdapter);
     }
 }

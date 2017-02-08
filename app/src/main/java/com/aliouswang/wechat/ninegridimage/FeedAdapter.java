@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aliouswang.wechat.library.AbstractGridImageViewGroup;
+import com.aliouswang.wechat.library.IImageLoadStrategy;
 import com.aliouswang.wechat.library.NormalGridImageViewGroup;
 import com.aliouswang.wechat.ninegridimage.model.Feed;
 
@@ -18,6 +19,12 @@ import java.util.ArrayList;
 public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder>{
 
     private ArrayList<Feed> mFeeds;
+
+    private IImageLoadStrategy mImageLoadStrategy;
+
+    public void setImageLoadStrategy(IImageLoadStrategy imageLoadStrategy) {
+        mImageLoadStrategy = imageLoadStrategy;
+    }
 
     public void setFeeds(ArrayList<Feed> feeds) {
         mFeeds = feeds;
@@ -33,6 +40,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder>{
     @Override
     public void onBindViewHolder(FeedViewHolder holder, final int position) {
         NormalGridImageViewGroup imageViewGroup = holder.mNormalGridImageViewGroup;
+        imageViewGroup.setImageLoadStrategy(mImageLoadStrategy);
         imageViewGroup.setImageAdapter(new AbstractGridImageViewGroup.Adapter() {
             @Override
             public int getCount() {

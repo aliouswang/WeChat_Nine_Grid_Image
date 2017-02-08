@@ -30,6 +30,8 @@ public abstract class AbstractGridImageViewGroup<T extends View> extends ViewGro
     private float mCellWidth;
     private float mCellHeight;
 
+    protected IImageLoadStrategy<T> mImageLoadStrategy;
+
     public AbstractGridImageViewGroup(Context context) {
         this(context, null);
     }
@@ -52,6 +54,10 @@ public abstract class AbstractGridImageViewGroup<T extends View> extends ViewGro
         mSingleImageRatio = t.getFloat(R.styleable.AbstractGridImageViewGroup_single_image_ratio, DEFAULT_SINGLE_IMAGE_RATIO);
         mMaxImageCount = t.getInt(R.styleable.AbstractGridImageViewGroup_max_image_count, DEFAULT_MAX_IMAGE_COUNT);
         t.recycle();
+    }
+
+    public void setImageLoadStrategy(IImageLoadStrategy<T> imageLoadStrategy) {
+        mImageLoadStrategy = imageLoadStrategy;
     }
 
     public void setImageAdapter(Adapter imageAdapter) {
@@ -96,7 +102,11 @@ public abstract class AbstractGridImageViewGroup<T extends View> extends ViewGro
 
     protected abstract T createView();
 
-    protected abstract void loadImage(T childView, String imageUrl);
+    private void loadImage(T childView, String imageUrl) {
+        if (mImageLoadStrategy != null) {
+            mImageLoadStrategy.loadImage(childView, imageUrl);
+        }
+    }
 
     public int getImageCount() {
         return mImageAdapter != null ? Math.min(mImageAdapter.getCount(), mMaxImageCount) : 0;

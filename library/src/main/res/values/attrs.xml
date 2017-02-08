@@ -12,4 +12,10 @@
 
     </declare-styleable>
 
+    <declare-styleable name="ScaleImageView">
+
+        <attr name="siv_scale" format="float"></attr>
+
+    </declare-styleable>
+
 </resources>

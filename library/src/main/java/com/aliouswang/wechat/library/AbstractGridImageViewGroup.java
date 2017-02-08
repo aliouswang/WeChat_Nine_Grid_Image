@@ -6,8 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.orhanobut.logger.Logger;
-
 /**
  * Created by aliouswang on 17/2/7.
  */
@@ -131,9 +129,9 @@ public abstract class AbstractGridImageViewGroup<T extends View> extends ViewGro
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         int cellCount = getImageCount();
-        Logger.e("cellWidth:" + mCellWidth + ";cellHeight:" + mCellHeight
-                + ";width:" + getMeasuredWidth() + ";height:" + getMeasuredHeight()
-        );
+//        Logger.e("cellWidth:" + mCellWidth + ";cellHeight:" + mCellHeight
+//                + ";width:" + getMeasuredWidth() + ";height:" + getMeasuredHeight()
+//        );
         for (int i = 0; i < cellCount; i++) {
             int row = i / mColumnCount;
             int column = i % mColumnCount;

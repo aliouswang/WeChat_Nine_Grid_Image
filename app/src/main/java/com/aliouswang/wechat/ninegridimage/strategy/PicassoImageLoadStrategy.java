@@ -13,6 +13,7 @@ public class PicassoImageLoadStrategy implements IImageLoadStrategy<ScaleImageVi
 
     @Override
     public void loadImage(ScaleImageView scaleImageView, String imageUrl) {
-        Picasso.with(scaleImageView.getContext()).load(imageUrl).into(scaleImageView);
+        Picasso.with(scaleImageView.getContext()).load(imageUrl)
+                .into(scaleImageView);
     }
 }

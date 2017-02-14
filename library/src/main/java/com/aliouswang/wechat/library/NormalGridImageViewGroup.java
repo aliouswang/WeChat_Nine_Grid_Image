@@ -22,7 +22,6 @@ public class NormalGridImageViewGroup extends AbstractGridImageViewGroup<ScaleIm
         super(context, attrs, defStyleAttr);
     }
 
-
     @Override
     protected ScaleImageView createView() {
         ScaleImageView imageView = new ScaleImageView(getContext());

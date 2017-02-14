@@ -2,6 +2,7 @@ package com.aliouswang.wechat.library;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -31,6 +32,14 @@ public class ScaleImageView extends ImageView{
 
     public void setScale(float scale) {
         this.scale = scale;
+    }
+
+    @Override
+    public void setImageDrawable(Drawable drawable) {
+        super.setImageDrawable(drawable);
+//        if (drawable instanceof BitmapDrawable) {
+            this.scale = (float)drawable.getIntrinsicHeight() / (float)drawable.getIntrinsicWidth();
+//        }
     }
 
     @Override

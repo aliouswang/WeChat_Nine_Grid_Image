@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.aliouswang.wechat.library.AbstractGridImageViewGroup;
-import com.aliouswang.wechat.library.IImageLoadStrategy;
-import com.aliouswang.wechat.library.NormalGridImageViewGroup;
+import com.aliouswang.wechat.library.widget.AbstractGridImageViewGroup;
+import com.aliouswang.wechat.library.interfaces.IImageLoadStrategy;
+import com.aliouswang.wechat.library.widget.NormalGridImageViewGroup;
 import com.aliouswang.wechat.ninegridimage.model.Feed;
 
 import java.util.ArrayList;

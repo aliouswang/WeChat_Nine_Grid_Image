@@ -3,8 +3,8 @@ package com.aliouswang.wechat.ninegridimage.strategy;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 
-import com.aliouswang.wechat.library.IImageLoadStrategy;
-import com.aliouswang.wechat.library.ScaleImageView;
+import com.aliouswang.wechat.library.interfaces.IImageLoadStrategy;
+import com.aliouswang.wechat.library.widget.RatioImageView;
 import com.bumptech.glide.GenericRequestBuilder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.ResourceDecoder;
@@ -26,10 +26,10 @@ import java.io.InputStream;
  * Created by aliouswang on 17/2/8.
  */
 
-public class GlideImageLoadStrategy implements IImageLoadStrategy<ScaleImageView>{
+public class GlideImageLoadStrategy implements IImageLoadStrategy<RatioImageView>{
 
     @Override
-    public void loadImage(final ScaleImageView scaleImageView, String imageUrl) {
+    public void loadImage(final RatioImageView scaleImageView, String imageUrl) {
         final GenericRequestBuilder<Uri, InputStream, BitmapFactory.Options, BitmapFactory.Options>
                 SIZE_REQUEST = Glide.with(scaleImageView.getContext())
                 .using(new StreamUriLoader(scaleImageView.getContext()), InputStream.class)

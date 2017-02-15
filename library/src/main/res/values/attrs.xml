@@ -12,7 +12,7 @@
 
     </declare-styleable>
 
-    <declare-styleable name="ScaleImageView">
+    <declare-styleable name="RatioImageView">
 
         <attr name="siv_scale" format="float"></attr>
 

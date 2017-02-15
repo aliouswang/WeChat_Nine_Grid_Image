@@ -1,4 +1,4 @@
-package com.aliouswang.wechat.library;
+package com.aliouswang.wechat.library.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,27 +6,29 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import com.aliouswang.wechat.library.R;
+
 /**
  * Created by aliouswang on 17/2/8.
  */
 
-public class ScaleImageView extends ImageView{
+public class RatioImageView extends ImageView{
 
     private float scale = 1.0f;
 
-    public ScaleImageView(Context context) {
+    public RatioImageView(Context context) {
         this(context, null);
     }
 
-    public ScaleImageView(Context context, AttributeSet attrs) {
+    public RatioImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ScaleImageView(Context context, AttributeSet attrs, int defStyle) {
+    public RatioImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         TypedArray t = context.obtainStyledAttributes(attrs,
-                R.styleable.ScaleImageView, 0, 0);
-        scale = t.getFloat(R.styleable.ScaleImageView_siv_scale, 1.0f);
+                R.styleable.RatioImageView, 0, 0);
+        scale = t.getFloat(R.styleable.RatioImageView_siv_scale, 1.0f);
         t.recycle();
     }
 

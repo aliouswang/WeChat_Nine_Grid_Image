@@ -1,4 +1,4 @@
-package com.aliouswang.wechat.library;
+package com.aliouswang.wechat.library.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,7 +8,7 @@ import android.widget.ImageView;
  * Created by aliouswang on 17/2/7.
  */
 
-public class NormalGridImageViewGroup extends AbstractGridImageViewGroup<ScaleImageView>{
+public class NormalGridImageViewGroup extends AbstractGridImageViewGroup<RatioImageView> {
 
     public NormalGridImageViewGroup(Context context) {
         super(context);
@@ -23,8 +23,8 @@ public class NormalGridImageViewGroup extends AbstractGridImageViewGroup<ScaleIm
     }
 
     @Override
-    protected ScaleImageView createView() {
-        ScaleImageView imageView = new ScaleImageView(getContext());
+    protected RatioImageView createView() {
+        RatioImageView imageView = new RatioImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         return imageView;
     }

@@ -3,7 +3,7 @@ package com.aliouswang.wechat.ninegridimage;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.aliouswang.wechat.library.NormalGridImageViewGroup;
+import com.aliouswang.wechat.library.widget.NormalGridImageViewGroup;
 
 /**
  * Created by aliouswang on 17/2/7.

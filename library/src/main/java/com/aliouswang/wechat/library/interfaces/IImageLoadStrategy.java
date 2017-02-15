@@ -1,4 +1,4 @@
-package com.aliouswang.wechat.library;
+package com.aliouswang.wechat.library.interfaces;
 
 /**
  * Image load strategy, such as : fresco, glide, picasso, universal image loader, volley.

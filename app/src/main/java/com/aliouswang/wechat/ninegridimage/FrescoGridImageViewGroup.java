@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.aliouswang.wechat.library.AbstractGridImageViewGroup;
+import com.aliouswang.wechat.library.widget.AbstractGridImageViewGroup;
 
 /**
  * Created by aliouswang on 17/2/8.

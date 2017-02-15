@@ -1,10 +1,13 @@
-package com.aliouswang.wechat.library;
+package com.aliouswang.wechat.library.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.aliouswang.wechat.library.interfaces.IImageLoadStrategy;
+import com.aliouswang.wechat.library.R;
 
 /**
  * Created by aliouswang on 17/2/7.
